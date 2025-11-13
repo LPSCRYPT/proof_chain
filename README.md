@@ -11,6 +11,44 @@ This project implements an EZKL proof composition system that:
 
 The intermediate image remains private (committed via KZG) while proving the complete pipeline executed correctly.
 
+## Prerequisites
+
+### System Requirements
+- Ubuntu/Linux environment
+- Python 3.8+
+- 150GB+ disk space (for generated keys and artifacts)
+- 150GB+ RAM recommended for proof generation
+
+### Install EZKL
+
+**Option 1: Download Pre-built Binary (Recommended)**
+```bash
+# Create directory for EZKL
+mkdir -p ~/.ezkl
+
+# Download latest EZKL binary
+curl -L https://github.com/zkonduit/ezkl/releases/download/v23.0.3/ezkl -o ~/.ezkl/ezkl
+chmod +x ~/.ezkl/ezkl
+
+# Add to PATH (add to ~/.bashrc to make permanent)
+export PATH="$HOME/.ezkl:$PATH"
+
+# Verify installation
+ezkl --version
+```
+
+**Option 2: Install Python Bindings**
+```bash
+pip install ezkl
+```
+
+Both the binary (`ezkl`) and Python bindings (`import ezkl`) are required for the scripts to function.
+
+### Install Python Dependencies
+```bash
+pip install torch torchvision numpy onnx
+```
+
 ## Architecture
 
 ```
@@ -33,20 +71,25 @@ Two cryptographically-linked proofs
   - Output: 10 class logits
   - Trained on CIFAR-10
 
+## Quick Start
+
+```bash
+# 1. Setup and calibrate both circuits
+python3 proof_of_frog_fixed.py
+
+# 2. Generate complete proof pipeline
+bash complete_fixed_pipeline_WORKING.sh
+```
+
 ## Key Scripts
 
 ### Setup Scripts
 - `proof_of_frog_fixed.py` - Complete setup with proper `calibrate_settings()` workflow
-- `polycommit_proof_of_frog.py` - Original polycommit implementation
-- `complete_polycommit_pipeline.py` - Autonomous proof generation pipeline
+- `complete_fixed_pipeline_WORKING.sh` - Main proof generation pipeline
 
-### Linking Scripts
-- `link_composite_proof.py` - Performs commitment swapping via `swap_proof_commitments()`
-- `proof_of_frog_public.py` - Verification utilities
-
-### Training Scripts
-- `cifar_gan_training/train_tiny_conditional_gan_32x32.py` - GAN training
-- `cifar_gan_training/train_classifier.py` - Classifier training
+### Training Scripts (in cifar_gan_training/)
+- `train_tiny_conditional_gan_32x32.py` - GAN training
+- `train_classifier.py` - Classifier training
 
 ## EZKL Workflow
 
@@ -58,7 +101,7 @@ run_args = ezkl.PyRunArgs()
 run_args.output_visibility = "polycommit"  # or "KZGCommit"
 ezkl.gen_settings(model='network.onnx', output='settings.json', py_run_args=run_args)
 
-# 2. Calibrate settings (CRITICAL - enables KZG commitments!)
+# 2. Calibrate settings (CRITICAL - enables KZG commitments\!)
 ezkl.calibrate_settings(
     data='input.json',
     model='network.onnx',
@@ -96,35 +139,42 @@ ezkl.prove(
 ## Directory Structure
 
 ```
-/root/
-├── ezkl_logs/
-│   └── models/
-│       ├── ProofOfFrog_Fixed/         # Fixed implementation with calibration
-│       │   ├── gan/
-│       │   │   ├── network.onnx
-│       │   │   ├── settings.json
-│       │   │   ├── network.ezkl
-│       │   │   ├── kzg.srs
-│       │   │   ├── pk.key (81GB)
-│       │   │   ├── vk.key (37MB)
-│       │   │   ├── witness.json
-│       │   │   └── proof.json (27KB)
-│       │   └── classifier/
-│       │       ├── network.onnx
-│       │       ├── settings.json
-│       │       ├── network.ezkl
-│       │       ├── kzg.srs
-│       │       ├── pk.key (72GB)
-│       │       ├── vk.key (20MB)
-│       │       ├── witness_from_gan.json
-│       │       └── proof_from_gan.json (25KB)
-│       └── ProofOfFrog_Polycommit/    # Original implementation
-├── cifar_gan_training/
-│   ├── tiny_conditional_gan_cifar10.onnx
-│   ├── tiny_classifier_cifar10.onnx
-│   └── generated_samples/
-└── proof_of_frog_*.py
-
+proof_chain/
+├── README.md
+├── .gitignore
+├── proof_of_frog_fixed.py              # Main setup script
+├── complete_fixed_pipeline_WORKING.sh  # Proof generation pipeline
+├── ezkl_workflow_logger.py             # Logging utilities
+├── cifar_gan_training/                 # Model training scripts
+│   ├── train_tiny_conditional_gan_32x32.py
+│   ├── train_classifier.py
+│   └── *.onnx (trained models)
+├── docs/                               # Documentation
+│   ├── agents.md
+│   ├── KZG_COMMITMENT_FIX.md
+│   └── PROOF_OF_FROG_FINAL_STATUS.md
+├── archive/                            # Old/experimental scripts
+└── ezkl_logs/                          # Generated artifacts (gitignored)
+    └── models/
+        └── ProofOfFrog_Fixed/
+            ├── gan/
+            │   ├── network.onnx
+            │   ├── settings.json
+            │   ├── network.ezkl
+            │   ├── kzg.srs (2.1GB)
+            │   ├── pk.key (81GB)
+            │   ├── vk.key (37MB)
+            │   ├── witness.json
+            │   └── proof.json (27KB)
+            └── classifier/
+                ├── network.onnx
+                ├── settings.json
+                ├── network.ezkl
+                ├── kzg.srs
+                ├── pk.key (72GB)
+                ├── vk.key (20MB)
+                ├── witness_from_gan.json
+                └── proof_from_gan.json (25KB)
 ```
 
 ## Performance Metrics
@@ -154,24 +204,10 @@ ezkl.prove(
 - Investigating whether this is an EZKL framework bug or configuration issue
 - All other components work correctly
 
-## Insights from Zirconium Comparison
-
-This project was informed by analysis of the [zirconium](https://github.com/example/zirconium) proof composition system, which uses a different approach (on-chain sequential executor vs. off-chain polycommit). Key insights:
-
-1. **Two Valid Approaches**:
-   - **Polycommit (ProofOfFrog)**: Privacy-preserving, off-chain composition
-   - **Sequential Executor (Zirconium)**: On-chain accountability, public intermediates
-
-2. **Design Patterns Adopted**:
-   - `ComposableModelInterface` for type-safe chaining
-   - `ProofChainBuilder` for fluent API
-   - Comprehensive metrics collection
-
-See `ZIRCONIUM_INSIGHTS.md` for detailed comparison.
-
 ## References
 
 - [EZKL Documentation](https://docs.ezkl.xyz/)
+- [EZKL GitHub Repository](https://github.com/zkonduit/ezkl)
 - [EZKL Proof Splitting Example](https://github.com/zkonduit/ezkl/blob/main/examples/notebooks/proof_splitting.ipynb)
 - [MNIST GAN Proof Splitting](https://github.com/zkonduit/ezkl/blob/main/examples/notebooks/mnist_gan_proof_splitting.ipynb)
 

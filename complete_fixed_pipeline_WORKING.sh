@@ -10,7 +10,7 @@ set -e
 BASE_DIR="/root/ezkl_logs/models/ProofOfFrog_Fixed"
 GAN_DIR="$BASE_DIR/gan"
 CLS_DIR="$BASE_DIR/classifier"
-EZKL="/root/.ezkl/ezkl"
+EZKL="ezkl"
 
 echo "======================================================================"
 echo "PROOF-OF-FROG COMPLETE PIPELINE - Continuing from Fixed Setup"
