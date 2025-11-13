@@ -1,0 +1,107 @@
+# ============================================
+# EZKL Zero-Knowledge Proof System Files
+# ============================================
+
+# EZKL Binary Directory (entire directory)
+.ezkl/
+
+# EZKL Large Binary Artifacts (70-80GB each)
+*.key
+*.srs
+*.ezkl
+*.onnx
+
+# EZKL Generated Files
+ezkl_logs/
+*.log
+
+# Witness and Proof Files (can be large)
+witness*.json
+proof*.json
+input*.json
+output*.json
+*.json.bak
+
+# ============================================
+# Python
+# ============================================
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# ============================================
+# Machine Learning Model Files
+# ============================================
+
+# PyTorch models
+*.pt
+*.pth
+*.pkl
+*.pickle
+
+# Training artifacts
+checkpoints/
+checkpoints_*/
+data/
+generated_images/
+outputs/
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================
+# System and Cache Files
+# ============================================
+
+.DS_Store
+Thumbs.db
+.cache/
+.conda/
+*.bak
+*.tmp
+.ipynb_checkpoints/
+
+# ============================================
+# Logs and Temp Files
+# ============================================
+
+nohup.out
+*.out
+*.err
