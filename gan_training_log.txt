@@ -1,0 +1,18 @@
+============================================================
+STARTING ZK-OPTIMIZED CONDITIONAL GAN TRAINING
+============================================================
+Using device: cuda
+
+Initializing Balanced (V2) architecture...
+Generator parameters: 2,473,124
+Discriminator parameters: 2,770,688
+
+Setting up anti-collapse trainer...
+Traceback (most recent call last):
+  File "/root/proof_chain/run_gan_training.py", line 87, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/root/proof_chain/run_gan_training.py", line 34, in main
+    trainer = AntiCollapseTrainer(
+              ^^^^^^^^^^^^^^^^^^^^
+TypeError: AntiCollapseTrainer.__init__() got an unexpected keyword argument 'checkpoint_dir'

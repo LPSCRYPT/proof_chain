@@ -1,0 +1,179 @@
+{
+  "test_date": "2025-11-14T18:50:12.722503",
+  "overall_accuracy": 10.0,
+  "total_images": 10000,
+  "class_results": {
+    "airplane": {
+      "accuracy": 0.0,
+      "avg_confidence": 94.32038068771362,
+      "correct": 0
+    },
+    "automobile": {
+      "accuracy": 0.0,
+      "avg_confidence": 54.321837425231934,
+      "correct": 0
+    },
+    "bird": {
+      "accuracy": 0.0,
+      "avg_confidence": 89.0152096748352,
+      "correct": 0
+    },
+    "cat": {
+      "accuracy": 0.0,
+      "avg_confidence": 90.23817181587219,
+      "correct": 0
+    },
+    "deer": {
+      "accuracy": 0.0,
+      "avg_confidence": 99.99226927757263,
+      "correct": 0
+    },
+    "dog": {
+      "accuracy": 0.0,
+      "avg_confidence": 96.87989354133606,
+      "correct": 0
+    },
+    "frog": {
+      "accuracy": 0.0,
+      "avg_confidence": 98.09166193008423,
+      "correct": 0
+    },
+    "horse": {
+      "accuracy": 0.0,
+      "avg_confidence": 70.87461948394775,
+      "correct": 0
+    },
+    "ship": {
+      "accuracy": 0.0,
+      "avg_confidence": 63.85987997055054,
+      "correct": 0
+    },
+    "truck": {
+      "accuracy": 100.0,
+      "avg_confidence": 84.80008840560913,
+      "correct": 1000
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      1000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1000,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1000
+    ]
+  ]
+}

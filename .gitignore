@@ -64,14 +64,10 @@ env/
 # ============================================
 
 # PyTorch models
-*.pt
-*.pth
 *.pkl
 *.pickle
 
 # Training artifacts
-checkpoints/
-checkpoints_*/
 data/
 generated_images/
 outputs/
