@@ -472,3 +472,37 @@ fi
 
 *Last Updated: 2025-11-13*
 *Investigation: Classifier proof 3+ hours vs expected 12 minutes*
+
+---
+
+## On-Chain Verifier Deployment Investigation
+
+**Date:** 2025-11-14  
+**Status:** DEPLOYMENT SUCCESSFUL (LOCAL TESTNET)
+
+### Deployed Contracts (Anvil Local Testnet)
+
+- GAN Verifier: 0x5fbdb2315678afecb367f032d93f642f64180aa3 (15 KB runtime)
+- Classifier Verifier: 0xe7f1725e7734ce288f8367e1bb143E90bb3F0512 (301 KB runtime)
+
+### Key Findings
+
+**GAN Verifier:** Fully production-ready
+- 15.5 KB runtime bytecode (under 24 KB L1 limit)
+- On-chain verification SUCCESSFUL
+- Deployable to any EVM chain
+
+**Classifier Verifier:** L1 deployment impossible
+- 309 KB runtime bytecode (13x over 24 KB limit)
+- Requires Anvil with --code-size-limit 500000 --gas-limit 100000000
+- Reusable verifier generation FAILED: "ptr exceeds 16 bits"
+- Root cause: 14,336 shuffles create massive verification logic
+
+### Production Recommendations
+
+**For GAN:** Deploy anywhere  
+**For Classifier:** L2 required (Arbitrum/Optimism/Base) or off-chain verification
+
+*Full details in ONCHAIN_DEPLOYMENT_SUMMARY.md*
+
+---

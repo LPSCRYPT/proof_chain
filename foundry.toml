@@ -1,0 +1,46 @@
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+test = 'test'
+script = 'script'
+
+# Solc version - using latest stable
+solc_version = '0.8.28'
+
+# Optimizer settings
+optimizer = true
+optimizer_runs = 1  # Optimize for deployment size (lower is smaller bytecode)
+
+# EVM version
+evm_version = 'cancun'
+
+# Remappings
+remappings = []
+
+# Gas reporting
+gas_reports = ['*']
+
+# Verbosity
+verbosity = 2
+
+# Allow large contracts (for our 1.3MB classifier verifier)
+# This is mainly for Anvil local testing
+ignored_error_codes = [5574]  # Contract code size exceeds 24576 bytes
+
+[profile.anvil]
+# Local Anvil settings - no size limits
+src = 'src'
+out = 'out'
+libs = ['lib']
+
+[rpc_endpoints]
+anvil = "http://localhost:8545"
+sepolia = "https://eth-sepolia.g.alchemy.com/v2/YOUR_API_KEY"
+base_sepolia = "https://sepolia.base.org"
+arbitrum_sepolia = "https://sepolia-rollup.arbitrum.io/rpc"
+
+[etherscan]
+sepolia = { key = "YOUR_ETHERSCAN_API_KEY" }
+base_sepolia = { key = "YOUR_BASESCAN_API_KEY" }
+arbitrum_sepolia = { key = "YOUR_ARBISCAN_API_KEY" }
