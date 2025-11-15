@@ -1,0 +1,101 @@
+[
+  {
+    "experiment_id": "exp_001",
+    "name": "ultra_minimal",
+    "tier": 1,
+    "architecture": {
+      "latent_dim": 50,
+      "embed_dim": 20,
+      "ngf": 32,
+      "num_layers": 3,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 50,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 15
+  },
+  {
+    "experiment_id": "exp_002",
+    "name": "minimal_no_bn",
+    "tier": 1,
+    "architecture": {
+      "latent_dim": 64,
+      "embed_dim": 25,
+      "ngf": 32,
+      "num_layers": 3,
+      "use_bias": false,
+      "use_batchnorm": false,
+      "activation": "leaky_relu"
+    },
+    "training": {
+      "epochs": 60,
+      "lr_g": 0.00015,
+      "lr_d": 8e-05
+    },
+    "expected_ops": 20
+  },
+  {
+    "experiment_id": "exp_003",
+    "name": "tiny_linear",
+    "tier": 1,
+    "architecture": {
+      "latent_dim": 75,
+      "embed_dim": 30,
+      "ngf": 24,
+      "num_layers": 3,
+      "linear_layers": 2,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 70,
+      "lr_g": 0.00025,
+      "lr_d": 0.00012
+    },
+    "expected_ops": 25
+  },
+  {
+    "experiment_id": "exp_004",
+    "name": "micro_conv",
+    "tier": 1,
+    "architecture": {
+      "latent_dim": 80,
+      "embed_dim": 32,
+      "ngf": 28,
+      "num_layers": 3,
+      "use_bias": false,
+      "kernel_size": 3,
+      "activation": "gelu"
+    },
+    "training": {
+      "epochs": 60,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001,
+      "label_smoothing": 0.05
+    },
+    "expected_ops": 30
+  },
+  {
+    "experiment_id": "exp_005",
+    "name": "ultra_narrow",
+    "tier": 1,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 40,
+      "ngf": 24,
+      "num_layers": 4,
+      "use_bias": false,
+      "activation": "tanh"
+    },
+    "training": {
+      "epochs": 80,
+      "lr_g": 0.00018,
+      "lr_d": 9e-05
+    },
+    "expected_ops": 35
+  }
+]

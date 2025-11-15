@@ -1,0 +1,13 @@
+{
+  "model": "exp_026_mlp_only",
+  "parameters": 18443764,
+  "estimated_ops": 10,
+  "diversity": 0.10273619099522975,
+  "class_separation": 0.8895551535818312,
+  "architecture": {
+    "linear_layers": 5,
+    "embedding_layers": 1,
+    "activation_layers": 5,
+    "batchnorm_layers": 4
+  },
+  "zk_ready": 

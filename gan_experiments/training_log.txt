@@ -1,0 +1,199 @@
+================================================================================
+GAN ARCHITECTURE EXPERIMENTS - AUTOMATED TRAINING
+Started: 2025-11-14 23:57:34
+================================================================================
+Device: cuda
+
+================================================================================
+TRAINING TIER 1 - 2 experiments
+================================================================================
+
+======================================================================
+TRAINING: exp_001 - ultra_minimal
+Tier: 1 | Expected ops: 15
+======================================================================
+Generator params: 984,552
+Discriminator params: 168,648
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.6436, Loss_D: 1.4415
+Epoch [10/30] Loss_G: 0.7116, Loss_D: 1.3978
+Epoch [20/30] Loss_G: 0.6944, Loss_D: 1.3925
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier1/models/exp_001_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier1/samples/exp_001_samples.pt
+
+✓ Training complete for exp_001
+  Time: 17.9s
+  Diversity: 0.0070
+  Ops: 14 (expected: 15)
+
+======================================================================
+TRAINING: exp_002 - minimal_no_bn
+Tier: 1 | Expected ops: 20
+======================================================================
+Generator params: 1,053,786
+Discriminator params: 169,338
+Estimated ops: 10
+Epoch [0/30] Loss_G: 0.5973, Loss_D: 1.4817
+Epoch [10/30] Loss_G: 0.6673, Loss_D: 1.3933
+Epoch [20/30] Loss_G: 0.7477, Loss_D: 1.3859
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier1/models/exp_002_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier1/samples/exp_002_samples.pt
+
+✓ Training complete for exp_002
+  Time: 16.3s
+  Diversity: 0.0012
+  Ops: 10 (expected: 20)
+
+================================================================================
+TRAINING TIER 2 - 2 experiments
+================================================================================
+
+======================================================================
+TRAINING: exp_006 - baseline_current
+Tier: 2 | Expected ops: 34
+======================================================================
+Generator params: 2,484,644
+Discriminator params: 381,812
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.6041, Loss_D: 1.4926
+Epoch [10/30] Loss_G: 0.7125, Loss_D: 1.3926
+Epoch [20/30] Loss_G: 0.7051, Loss_D: 1.3862
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier2/models/exp_006_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier2/samples/exp_006_samples.pt
+
+✓ Training complete for exp_006
+  Time: 17.1s
+  Diversity: 0.0040
+  Ops: 14 (expected: 34)
+
+======================================================================
+TRAINING: exp_007 - wider_filters
+Tier: 2 | Expected ops: 42
+======================================================================
+Generator params: 3,092,154
+Discriminator params: 515,874
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.6130, Loss_D: 1.5096
+Epoch [10/30] Loss_G: 0.7115, Loss_D: 1.3942
+Epoch [20/30] Loss_G: 0.6982, Loss_D: 1.3902
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier2/models/exp_007_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier2/samples/exp_007_samples.pt
+
+✓ Training complete for exp_007
+  Time: 17.8s
+  Diversity: 0.0083
+  Ops: 14 (expected: 42)
+
+================================================================================
+TRAINING TIER 3 - 2 experiments
+================================================================================
+
+======================================================================
+TRAINING: exp_016 - high_capacity
+Tier: 3 | Expected ops: 72
+======================================================================
+Generator params: 4,345,475
+Discriminator params: 676,480
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.6098, Loss_D: 1.5112
+Epoch [10/30] Loss_G: 0.7123, Loss_D: 1.3944
+Epoch [20/30] Loss_G: 0.7035, Loss_D: 1.3879
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier3/models/exp_016_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier3/samples/exp_016_samples.pt
+
+✓ Training complete for exp_016
+  Time: 18.3s
+  Diversity: 0.0061
+  Ops: 14 (expected: 72)
+
+======================================================================
+TRAINING: exp_017 - wider_deeper
+Tier: 3 | Expected ops: 75
+======================================================================
+Generator params: 3,414,864
+Discriminator params: 519,384
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.5983, Loss_D: 1.4959
+Epoch [10/30] Loss_G: 0.7127, Loss_D: 1.3909
+Epoch [20/30] Loss_G: 0.6949, Loss_D: 1.3918
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier3/models/exp_017_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier3/samples/exp_017_samples.pt
+
+✓ Training complete for exp_017
+  Time: 18.9s
+  Diversity: 0.0057
+  Ops: 14 (expected: 75)
+
+================================================================================
+TRAINING TIER 4 - 2 experiments
+================================================================================
+
+======================================================================
+TRAINING: exp_026 - mlp_only
+Tier: 4 | Expected ops: 20
+======================================================================
+Generator params: 18,443,764
+Discriminator params: 381,812
+Estimated ops: 10
+Epoch [0/30] Loss_G: 0.5466, Loss_D: 1.6162
+Epoch [10/30] Loss_G: 0.8400, Loss_D: 1.2588
+Epoch [20/30] Loss_G: 1.3586, Loss_D: 0.9320
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier4/models/exp_026_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier4/samples/exp_026_samples.pt
+
+✓ Training complete for exp_026
+  Time: 19.3s
+  Diversity: 0.0831
+  Ops: 10 (expected: 20)
+
+======================================================================
+TRAINING: exp_027 - vae_hybrid
+Tier: 4 | Expected ops: 45
+======================================================================
+Generator params: 2,484,644
+Discriminator params: 381,812
+Estimated ops: 14
+Epoch [0/30] Loss_G: 0.6184, Loss_D: 1.4899
+Epoch [10/30] Loss_G: 0.7243, Loss_D: 1.3996
+Epoch [20/30] Loss_G: 0.7036, Loss_D: 1.3910
+
+Generating samples...
+✓ Model saved: /root/proof_chain/gan_experiments/tier4/models/exp_027_generator.pth
+✓ Samples saved: /root/proof_chain/gan_experiments/tier4/samples/exp_027_samples.pt
+
+✓ Training complete for exp_027
+  Time: 17.5s
+  Diversity: 0.0045
+  Ops: 14 (expected: 45)
+
+================================================================================
+TRAINING SUMMARY
+================================================================================
+
+Total experiments completed: 8
+
+Best circuit efficiency:
+  exp_002: 10 ops
+
+Best diversity:
+  exp_026: 0.0831
+
+Best balance (quality/ops):
+  exp_026: score=0.831
+
+✓ All training complete!
+Finished: 2025-11-15 00:00:03

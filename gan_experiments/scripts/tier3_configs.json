@@ -1,0 +1,200 @@
+[
+  {
+    "experiment_id": "exp_016",
+    "name": "high_capacity",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 64,
+      "num_layers": 4,
+      "use_bias": true,
+      "activation": "leaky_relu"
+    },
+    "training": {
+      "epochs": 120,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 72
+  },
+  {
+    "experiment_id": "exp_017",
+    "name": "wider_deeper",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 120,
+      "embed_dim": 60,
+      "ngf": 56,
+      "num_layers": 5,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 110,
+      "lr_g": 0.00018,
+      "lr_d": 9e-05
+    },
+    "expected_ops": 75
+  },
+  {
+    "experiment_id": "exp_018",
+    "name": "residual_blocks",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 52,
+      "num_layers": 4,
+      "residual_blocks": 2,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 120,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 78
+  },
+  {
+    "experiment_id": "exp_019",
+    "name": "multi_scale",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 60,
+      "ngf": 48,
+      "num_layers": 5,
+      "multi_scale": true,
+      "use_bias": false,
+      "activation": "gelu"
+    },
+    "training": {
+      "epochs": 125,
+      "lr_g": 0.00019,
+      "lr_d": 9.5e-05
+    },
+    "expected_ops": 80
+  },
+  {
+    "experiment_id": "exp_020",
+    "name": "style_modulation",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 48,
+      "num_layers": 4,
+      "style_layers": 2,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 120,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 82
+  },
+  {
+    "experiment_id": "exp_021",
+    "name": "wavelet_transform",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 120,
+      "embed_dim": 60,
+      "ngf": 52,
+      "num_layers": 4,
+      "use_wavelet": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 115,
+      "lr_g": 0.00021,
+      "lr_d": 0.000105
+    },
+    "expected_ops": 85
+  },
+  {
+    "experiment_id": "exp_022",
+    "name": "dual_discriminator",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 56,
+      "num_layers": 4,
+      "dual_disc": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 130,
+      "lr_g": 0.00018,
+      "lr_d": 9e-05
+    },
+    "expected_ops": 88
+  },
+  {
+    "experiment_id": "exp_023",
+    "name": "conditional_bn",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 52,
+      "num_layers": 4,
+      "conditional_bn": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 120,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 90
+  },
+  {
+    "experiment_id": "exp_024",
+    "name": "pyramid_features",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 128,
+      "embed_dim": 64,
+      "ngf": 48,
+      "num_layers": 5,
+      "feature_pyramid": true,
+      "use_bias": false,
+      "activation": "leaky_relu"
+    },
+    "training": {
+      "epochs": 125,
+      "lr_g": 0.00019,
+      "lr_d": 9.5e-05
+    },
+    "expected_ops": 93
+  },
+  {
+    "experiment_id": "exp_025",
+    "name": "max_quality",
+    "tier": 3,
+    "architecture": {
+      "latent_dim": 150,
+      "embed_dim": 75,
+      "ngf": 64,
+      "num_layers": 5,
+      "use_bias": true,
+      "activation": "gelu",
+      "use_attention": true
+    },
+    "training": {
+      "epochs": 150,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 98
+  }
+]

@@ -1,0 +1,189 @@
+{
+  "real_accuracy": 72.9,
+  "model_results": [
+    {
+      "experiment_id": "exp_026",
+      "name": "mlp_only",
+      "accuracy": 19.4,
+      "correct": 194,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        0,
+        6,
+        22,
+        66,
+        0,
+        100,
+        0
+      ],
+      "model_type": "mlp",
+      "expected_ops": 20,
+      "tier": 4,
+      "tradeoff_score": 4.337971876349592
+    },
+    {
+      "experiment_id": "exp_027",
+      "name": "vae_hybrid",
+      "accuracy": 27.5,
+      "correct": 275,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        100,
+        75,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "model_type": "vae_gan",
+      "expected_ops": 45,
+      "tier": 4,
+      "tradeoff_score": 4.099457958749614
+    },
+    {
+      "experiment_id": "exp_007",
+      "name": "wider_filters",
+      "accuracy": 22.9,
+      "correct": 229,
+      "total": 1000,
+      "per_class": [
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        97,
+        0,
+        28,
+        100
+      ],
+      "model_type": "conv",
+      "expected_ops": 42,
+      "tier": 2,
+      "tradeoff_score": 3.5335467141319046
+    },
+    {
+      "experiment_id": "exp_016",
+      "name": "high_capacity",
+      "accuracy": 29.4,
+      "correct": 294,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        0,
+        87,
+        0,
+        100,
+        0,
+        100,
+        7
+      ],
+      "model_type": "conv",
+      "expected_ops": 72,
+      "tier": 3,
+      "tradeoff_score": 3.464823227814083
+    },
+    {
+      "experiment_id": "exp_002",
+      "name": "minimal_no_bn",
+      "accuracy": 12.3,
+      "correct": 123,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        0,
+        40,
+        0,
+        0,
+        0,
+        83,
+        0
+      ],
+      "model_type": "conv",
+      "expected_ops": 20,
+      "tier": 1,
+      "tradeoff_score": 2.7503636123247412
+    },
+    {
+      "experiment_id": "exp_001",
+      "name": "ultra_minimal",
+      "accuracy": 10.0,
+      "correct": 100,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "model_type": "conv",
+      "expected_ops": 15,
+      "tier": 1,
+      "tradeoff_score": 2.581988897471611
+    },
+    {
+      "experiment_id": "exp_017",
+      "name": "wider_deeper",
+      "accuracy": 19.3,
+      "correct": 193,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        46,
+        52,
+        15,
+        80,
+        0,
+        0,
+        0
+      ],
+      "model_type": "conv",
+      "expected_ops": 75,
+      "tier": 3,
+      "tradeoff_score": 2.2285720390719552
+    },
+    {
+      "experiment_id": "exp_006",
+      "name": "baseline_current",
+      "accuracy": 10.0,
+      "correct": 100,
+      "total": 1000,
+      "per_class": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      "model_type": "conv",
+      "expected_ops": 34,
+      "tier": 2,
+      "tradeoff_score": 1.7149858514250882
+    }
+  ]
+}

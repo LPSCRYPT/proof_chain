@@ -1,0 +1,210 @@
+[
+  {
+    "experiment_id": "exp_006",
+    "name": "baseline_current",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": 48,
+      "num_layers": 4,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001,
+      "label_smoothing": 0.1
+    },
+    "expected_ops": 34
+  },
+  {
+    "experiment_id": "exp_007",
+    "name": "wider_filters",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 90,
+      "embed_dim": 45,
+      "ngf": 56,
+      "num_layers": 3,
+      "use_bias": false,
+      "activation": "leaky_relu"
+    },
+    "training": {
+      "epochs": 90,
+      "lr_g": 0.00022,
+      "lr_d": 0.00011
+    },
+    "expected_ops": 42
+  },
+  {
+    "experiment_id": "exp_008",
+    "name": "deeper_layers",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": 40,
+      "num_layers": 5,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.00018,
+      "lr_d": 9e-05,
+      "gradient_clip": 3.0
+    },
+    "expected_ops": 45
+  },
+  {
+    "experiment_id": "exp_009",
+    "name": "mixed_activation",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 48,
+      "ngf": 44,
+      "num_layers": 4,
+      "use_bias": false,
+      "activation": "mixed",
+      "dropout": 0.1
+    },
+    "training": {
+      "epochs": 95,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 48
+  },
+  {
+    "experiment_id": "exp_010",
+    "name": "skip_connections",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 96,
+      "embed_dim": 48,
+      "ngf": 48,
+      "num_layers": 4,
+      "use_skip": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.00021,
+      "lr_d": 0.000105
+    },
+    "expected_ops": 52
+  },
+  {
+    "experiment_id": "exp_011",
+    "name": "instance_norm",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": 48,
+      "num_layers": 4,
+      "normalization": "instance",
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 95,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 54
+  },
+  {
+    "experiment_id": "exp_012",
+    "name": "spectral_norm",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 52,
+      "ngf": 46,
+      "num_layers": 4,
+      "use_spectral_norm": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.00019,
+      "lr_d": 9.5e-05
+    },
+    "expected_ops": 56
+  },
+  {
+    "experiment_id": "exp_013",
+    "name": "adaptive_filters",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": [
+        32,
+        48,
+        64,
+        48
+      ],
+      "num_layers": 4,
+      "use_bias": false,
+      "activation": "gelu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001
+    },
+    "expected_ops": 58
+  },
+  {
+    "experiment_id": "exp_014",
+    "name": "attention_light",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": 44,
+      "num_layers": 4,
+      "use_attention": "light",
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 100,
+      "lr_g": 0.00018,
+      "lr_d": 9e-05
+    },
+    "expected_ops": 62
+  },
+  {
+    "experiment_id": "exp_015",
+    "name": "progressive_growth",
+    "tier": 2,
+    "architecture": {
+      "latent_dim": 100,
+      "embed_dim": 50,
+      "ngf": 48,
+      "num_layers": 4,
+      "progressive": true,
+      "use_bias": false,
+      "activation": "relu"
+    },
+    "training": {
+      "epochs": 120,
+      "lr_g": 0.0002,
+      "lr_d": 0.0001,
+      "progressive_epochs": [
+        30,
+        60,
+        90
+      ]
+    },
+    "expected_ops": 65
+  }
+]
